@@ -1,10 +1,11 @@
 #!/bin/sh
+# Downloads latest file and determines if different than previous version
 
 remote_file="http://PATH/TO/FILE/ONLINE"
 local_file="LOCAL/PATH/TO/FILE"
 
+# Check to see if domain is availible, and skip update if not
 ping -q -c1 DOMAIN/OF/ONLINE/FILE > /dev/null
-
 if [ $? -eq 0 ]
 then
 	echo "Internet is connected"
@@ -23,3 +24,5 @@ then
 else
 	echo "Internet is not connected - not checking for newer version"
 fi
+
+# Launch file here
